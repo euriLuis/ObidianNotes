@@ -10,13 +10,13 @@
 ****
 ### **Iniciar y gestionar un repositorio**
 
-| **Comando**                 | **Descripción**                                                                             |
-| :-------------------------- | ------------------------------------------------------------------------------------------- |
-| `git init`                  | Inicializa un repositorio Git en la carpeta actual.                                         |
-| `git clone URL`             | Clona un repositorio remoto en tu máquina local.                                            |
-| `git remote add origin URL` | Conecta el repositorio local con uno remoto.                                                |
-| `git remote -v`             | Muestra los repositorios remotos vinculados.                                                |
-| `git init -b main`          |  inicialice el nuevo repositorio y establezca el nombre de la rama predeterminada en `main` |
+| **Comando**                   | **Descripción**                                                                             |
+| :---------------------------- | ------------------------------------------------------------------------------------------- |
+| `git init`                    | Inicializa un repositorio Git en la carpeta actual.                                         |
+| `git clone URL`               | Clona un repositorio remoto en tu máquina local.                                            |
+| `git remote add origin <URL>` | Conecta el repositorio local con uno remoto.                                                |
+| `git remote -v`               | Muestra los repositorios remotos vinculados.                                                |
+| `git init -b main`            |  inicialice el nuevo repositorio y establezca el nombre de la rama predeterminada en `main` |
 ****
 ### **Control de cambios (Commits)**
 
@@ -39,14 +39,14 @@
 ****
 ### **Ramas (Branches)**
 
-|**Comando**|**Descripción**|
-|---|---|
-|`git branch`|Lista todas las ramas en el repositorio.|
-|`git branch nombre-rama`|Crea una nueva rama.|
-|`git checkout nombre-rama`|Cambia a una rama específica.|
-|`git switch nombre-rama`|Alternativa moderna a `git checkout nombre-rama`.|
-|`git merge nombre-rama`|Fusiona una rama con la actual.|
-|`git branch -d nombre-rama`|Elimina una rama local.|
+| **Comando**                 | **Descripción**                                   |
+| --------------------------- | ------------------------------------------------- |
+| `git branch`                | Lista todas las ramas en el repositorio.          |
+| `git branch nombre-rama`    | Crea una nueva rama.                              |
+| `git checkout nombre-rama`  | Cambia a una rama específica.                     |
+| `git switch nombre-rama`    | Alternativa moderna a `git checkout nombre-rama`. |
+| `git merge nombre-rama`     | Fusiona una rama con la actual.                   |
+| `git branch -d nombre-rama` | Elimina una rama local.                           |
 ****
 ### **Trabajar con GitHub (Repositorio remoto)**
 
