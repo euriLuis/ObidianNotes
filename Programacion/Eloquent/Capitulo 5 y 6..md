@@ -2,14 +2,12 @@
 ## Cap [[#Capitulo 5 Funciones de Orden Superior|5]] y [[#Capitulo 6 La Vida Secreta de los Objetos.|6]].
 ## Capitulo 5: Funciones de Orden Superior
 #### Abstracción
-- Las abstracciones nos brindan la capacidad de hablar sobre prob-
-lemas a un nivel superior (o más abstracto), sin distraernos con detalles no
-interesantes.
+- Las abstracciones nos brindan la capacidad de hablar sobre problemas a un nivel superior (o más abstracto), sin distraernos con detalles no interesantes.
 >  Las funciones que operan en otras funciones, ya sea tomandolas como argumentos o devolviéndolas, se llaman **funciones de orden superior.**
 
 
 **forEach**
-*itera sobre cada elemento de un array y realza una accion sobre este*
+*itera sobre cada elemento de un array y realiza una action sobre este*
 ```js
 ["A", "B"].forEach(l => console.log(l));
 // → A
@@ -126,7 +124,7 @@ function everY(arr, func){
 
 ****
 
-## Capitulo 6: La Vida Secreta de los Objetos.
+### Capitulo 6: La Vida Secreta de los Objetos.
 
 >La idea principal en la programación orientada a objetos es utilizar objetos, o más bien tipos de objetos, como la unidad de organización del programa. Configurar un programa como una serie de tipos de objetos estrictamente separados proporciona una forma de pensar en su estructura y, por lo tanto, de imponer algún tipo de disciplina para evitar que todo se entrelace.
 
@@ -156,5 +154,50 @@ console.log(buscador.find([4, 5])); // → true
 ```
 
 #### Prototipos
+*Cada objeto en JavaScript tiene un **prototype** (prototipo), que es otro objeto del cual hereda propiedades y métodos. Si buscas una propiedad o método en un objeto y no está definido en él, JavaScript lo buscará en su prototipo.*
 
+#### Clases
+*El sistema de prototipos de JavaScript puede interpretarse como una versión algo libre de los tipos de datos abstractos o clases. Una clase define la forma de un tipo de objeto, los métodos y propiedades que tiene. A dicho objeto se le llama una instancia de la clase.*
 
+La notación de class de JavaScript facilita la definición de este tipo de función, junto con un objeto prototype.
+La palabra clave class inicia una declaración de clase, que nos permite definir un constructor y un conjunto de métodos juntos.
+```js
+class Rabbit {
+	constructor(type) {
+		this.type = type;
+	}
+	speak(line) {
+		console.log(`El conejo ${this.type} dice '${line}'`);
+	}
+}
+```
+
+Los constructores, en JavaScript, se llaman colocando la palabra clave new delante de ellos.
+```js
+let killerRabbit = new Rabbit("asesino");
+```
+
+#### Propiedades privadas.
+Es común que las clases definan algunas propiedades y métodos para uso interno, que no forman parte de su interfaz. Estas se llaman propiedades privadas, en contraposición a las públicas, que son parte de la interfaz externa del objeto.
+Para declarar un método privado, coloca un signo # delante de su nombre. Estos métodos solo pueden ser llamados desde dentro de la declaración de la class que los define.
+```js
+class SecretiveObject {
+	#getSecret() {
+	return "Me comí todas las ciruelas";
+}
+
+interrogate() {
+	let deboDecirlo = this.#getSecret();
+		return "nunca";
+	}
+}
+```
+
+>Como alternativa al operador in, puedes utilizar la función `Object.hasOwn`, que ignora el prototipo del objeto.
+
+```js
+console.log(Object.hasOwn({x: 1}, "x"));
+// → true
+```
+
+#### 
